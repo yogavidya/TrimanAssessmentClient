@@ -158,56 +158,64 @@ $entry-vertical-margin: .75em;
   background-color: lightgrey;
 }
 
-.ip-header {
-  cursor: pointer;
-  width: 25%;
-  text-align: left;
+@mixin header-margins {
   margin-right: $table-horizontal-margin;
   margin-left: $table-horizontal-margin;
   margin-top: $header-vertical-margin;
   margin-bottom: $header-vertical-margin;
+}
+
+@mixin cell-margins {
+  margin-right: $table-horizontal-margin;
+  margin-left: $table-horizontal-margin;
+  margin-top: $entry-vertical-margin;
+  margin-bottom: $entry-vertical-margin;
+}
+
+@mixin responsive-span {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.ip-header {
+  cursor: pointer;
+  width: 25%;
+  text-align: left;
+  @include header-margins;
+  @include responsive-span;
 }
 .fqdn-header {
   cursor: pointer;
   width: 50%;
   text-align: left;
-  margin-right: $table-horizontal-margin;
-  margin-left: $table-horizontal-margin;
-  margin-top: $header-vertical-margin;
-  margin-bottom: $header-vertical-margin;
+  @include header-margins;
+  @include responsive-span;
 }
 .calls-header {
   cursor: pointer;
   width: 25%;
   text-align: right;
-  margin-right: $table-horizontal-margin;
-  margin-left: $table-horizontal-margin;
-  margin-top: $header-vertical-margin;
-  margin-bottom: $header-vertical-margin;
+  @include header-margins;
+  @include responsive-span;
 }
 .ip-entry {
   width: 25%;
   text-align: left;
-  margin-right: $table-horizontal-margin;
-  margin-left: $table-horizontal-margin;
-  margin-top: $entry-vertical-margin;
-  margin-bottom: $entry-vertical-margin;
+  @include cell-margins;
+  @include responsive-span;
 }
 .fqdn-entry {
   width: 50%;
   text-align: left;
-  margin-right: $table-horizontal-margin;
-  margin-left: $table-horizontal-margin;
-  margin-top: $entry-vertical-margin;
-  margin-bottom: $entry-vertical-margin;
+  @include cell-margins;
+  @include responsive-span;
 }
 .calls-entry {
   width: 25%;
   text-align: right;
-  margin-right: $table-horizontal-margin;
-  margin-left: $table-horizontal-margin;
-  margin-top: $entry-vertical-margin;
-  margin-bottom: $entry-vertical-margin;
+  @include cell-margins;
+  @include responsive-span;
 }
 
 </style>
